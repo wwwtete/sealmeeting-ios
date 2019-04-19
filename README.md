@@ -96,7 +96,7 @@ SealMeeting 的主体业务主要在 Sections 文件夹里。分为白板（Whit
 白板模块 `WhiteboardControl`文件里。主持人或者会议点击了共享白板或者新建白板，共享画布区会显示此白板。
 
 ## Service 部分介绍
-Service 部分由 （音视频）RTCService，（IM）IMService，（会议）ClaassroomService 三个部分组成。
+Service 部分由 （音视频）RTCService，（IM）IMService，（会议）ClassroomService 三个部分组成。
 ### RTCService 说明
 ---
 对应于`RTCService` 文件。通过单例模式实现。
@@ -395,7 +395,7 @@ Service 部分由 （音视频）RTCService，（IM）IMService，（会议）Cl
 
 ```
 
-*  创建白板成功，啥啊暗处白板成功之后的回调，只有创建者能收到。
+*  创建白板成功之后的回调，只有创建者能收到。
 
 ```
 - (void)whiteboardDidCreate:(Whiteboard *)board;
@@ -410,7 +410,7 @@ Service 部分由 （音视频）RTCService，（IM）IMService，（会议）Cl
 
 ```
 
-*  显示老师的回调，所有人都能收到
+*  显示主讲人的回调，所有人都能收到
 
 ```
 - (void)speakerDidDisplay;
