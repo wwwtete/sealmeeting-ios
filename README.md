@@ -1,6 +1,6 @@
 # SealMeeting-iOS
 
-本文档介绍了 SealMeeting 的整体框架设计和核心流程，为开发者了解 SealMeeting 的主要功能提供指导性说明。[体验 SealMeeting](https://www.rongcloud.cn)。
+本文档介绍了 SealMeeting 的整体框架设计和核心流程，为开发者了解 SealMeeting 的主要功能提供指导性说明。[体验 SealMeeting](https://www.rongcloud.cn/downloads/demo)。
 
 **前期准备**
 
