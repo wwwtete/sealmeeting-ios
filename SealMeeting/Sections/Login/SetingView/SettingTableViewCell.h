@@ -1,5 +1,5 @@
 //
-//  SettingViewController.h
+//  SettingTableViewCell.h
 //  SealMeeting
 //
 //  Created by 张改红 on 2019/3/4.
@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
-@interface SettingViewController : UITableViewController
-
+@interface SettingResolutionCell : UITableViewCell
++ (SettingResolutionCell *)configCell:(UITableView *)tableView;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -105,13 +105,28 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 95.0;
+    return 165.0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 50)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(30, 20, self.frame.size.width, 20)];
+    label.text = @"资源库";
+    label.textColor = [UIColor whiteColor];
+    label.textAlignment = NSTextAlignmentLeft;
+    label.font = [UIFont systemFontOfSize:16];
+    [view addSubview:label];
+    return view;
 }
 
 - (UITableView *)recentSharedTableView {
     if(!_recentSharedTableView) {
         CGSize size = self.bounds.size;
-        _recentSharedTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height) style:UITableViewStylePlain];
+        _recentSharedTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height) style:UITableViewStyleGrouped];
         _recentSharedTableView.backgroundColor = [UIColor clearColor];
         _recentSharedTableView.delegate = self;
         _recentSharedTableView.dataSource = self;
@@ -119,7 +134,9 @@
         _recentSharedTableView.separatorColor=[UIColor clearColor];
         _recentSharedTableView.showsVerticalScrollIndicator = NO;
         _recentSharedTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-        
+        if (@available(iOS 11.0, *)) {
+            _recentSharedTableView.insetsContentViewsToSafeArea = NO;
+        }
     }
     return _recentSharedTableView;
 }

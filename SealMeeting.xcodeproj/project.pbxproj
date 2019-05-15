@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1686F74DCA01ADF3303A37BB /* Pods_SealMeeting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6958C659498EF7812DCBCD2D /* Pods_SealMeeting.framework */; };
 		273A543D2253436600C45755 /* ShareTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 273A543C2253436600C45755 /* ShareTemplate.m */; };
+		276694EC227198530049F6C8 /* VideoMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 276694EB227198530049F6C8 /* VideoMaskView.m */; };
 		279F41B62251FE8100BD2873 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 279F41B52251FE8100BD2873 /* AppDelegate.m */; };
 		279F41BC2251FE8100BD2873 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279F41BA2251FE8100BD2873 /* Main.storyboard */; };
 		279F41C12251FE8300BD2873 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279F41BF2251FE8300BD2873 /* LaunchScreen.storyboard */; };
@@ -71,22 +72,24 @@
 		279F42A42251FF7100BD2873 /* ToolPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 279F426F2251FF7100BD2873 /* ToolPanelView.m */; };
 		279F42A52251FF7100BD2873 /* MainContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 279F42722251FF7100BD2873 /* MainContainerView.m */; };
 		279F42A62251FF7100BD2873 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 279F42752251FF7100BD2873 /* EmptyView.m */; };
-		279F42A72251FF7100BD2873 /* SelectResolutionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279F42772251FF7100BD2873 /* SelectResolutionController.m */; };
-		279F42A82251FF7100BD2873 /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 279F427B2251FF7100BD2873 /* SettingTableViewCell.m */; };
-		279F42A92251FF7100BD2873 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279F427D2251FF7100BD2873 /* SettingViewController.m */; };
+		279F42A82251FF7100BD2873 /* SettingResolutionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 279F427B2251FF7100BD2873 /* SettingResolutionCell.m */; };
 		279F42AA2251FF7100BD2873 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279F427F2251FF7100BD2873 /* LoginViewController.m */; };
 		279F42AB2251FF7100BD2873 /* LoginHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 279F42802251FF7100BD2873 /* LoginHelper.m */; };
 		279F42AC2251FF7100BD2873 /* SelectionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 279F42822251FF7100BD2873 /* SelectionButton.m */; };
 		279F42AD2251FF7100BD2873 /* InputTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 279F42852251FF7100BD2873 /* InputTextField.m */; };
+		A24251BC2277E10C0076FE34 /* ZoomControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A24251BB2277E10C0076FE34 /* ZoomControl.m */; };
 		A2968FDE2252F9E100348A92 /* InviteHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A2968FDD2252F9E100348A92 /* InviteHelper.m */; };
 		A2968FE02253046500348A92 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2968FDF2253046500348A92 /* MessageUI.framework */; };
 		A2968FE722533F6000348A92 /* QRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2968FE622533F6000348A92 /* QRCodeView.m */; };
+		A2C15F25226D5D5A0076394C /* SettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C15F24226D5D5A0076394C /* SettingView.m */; };
 		A2EA705922520DAA007E7A77 /* InviteListView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EA705822520DAA007E7A77 /* InviteListView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		273A543B2253436600C45755 /* ShareTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareTemplate.h; sourceTree = "<group>"; };
 		273A543C2253436600C45755 /* ShareTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareTemplate.m; sourceTree = "<group>"; };
+		276694EA227198530049F6C8 /* VideoMaskView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoMaskView.h; sourceTree = "<group>"; };
+		276694EB227198530049F6C8 /* VideoMaskView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoMaskView.m; sourceTree = "<group>"; };
 		279F41B12251FE8100BD2873 /* SealMeeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SealMeeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		279F41B42251FE8100BD2873 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		279F41B52251FE8100BD2873 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -209,12 +212,8 @@
 		279F42732251FF7100BD2873 /* EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
 		279F42742251FF7100BD2873 /* MainContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainContainerView.h; sourceTree = "<group>"; };
 		279F42752251FF7100BD2873 /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
-		279F42772251FF7100BD2873 /* SelectResolutionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectResolutionController.m; sourceTree = "<group>"; };
-		279F42782251FF7100BD2873 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		279F427A2251FF7100BD2873 /* SettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewCell.h; sourceTree = "<group>"; };
-		279F427B2251FF7100BD2873 /* SettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewCell.m; sourceTree = "<group>"; };
-		279F427C2251FF7100BD2873 /* SelectResolutionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectResolutionController.h; sourceTree = "<group>"; };
-		279F427D2251FF7100BD2873 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		279F427A2251FF7100BD2873 /* SettingResolutionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingResolutionCell.h; sourceTree = "<group>"; };
+		279F427B2251FF7100BD2873 /* SettingResolutionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingResolutionCell.m; sourceTree = "<group>"; };
 		279F427F2251FF7100BD2873 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		279F42802251FF7100BD2873 /* LoginHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHelper.m; sourceTree = "<group>"; };
 		279F42822251FF7100BD2873 /* SelectionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionButton.m; sourceTree = "<group>"; };
@@ -227,11 +226,15 @@
 		279F42AF225201A000BD2873 /* ErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorCode.h; sourceTree = "<group>"; };
 		279F42B0225201A000BD2873 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		6958C659498EF7812DCBCD2D /* Pods_SealMeeting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SealMeeting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A24251BA2277E10C0076FE34 /* ZoomControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZoomControl.h; sourceTree = "<group>"; };
+		A24251BB2277E10C0076FE34 /* ZoomControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZoomControl.m; sourceTree = "<group>"; };
 		A2968FDC2252F9E100348A92 /* InviteHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InviteHelper.h; sourceTree = "<group>"; };
 		A2968FDD2252F9E100348A92 /* InviteHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InviteHelper.m; sourceTree = "<group>"; };
 		A2968FDF2253046500348A92 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A2968FE522533F6000348A92 /* QRCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeView.h; sourceTree = "<group>"; };
 		A2968FE622533F6000348A92 /* QRCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeView.m; sourceTree = "<group>"; };
+		A2C15F23226D5D5A0076394C /* SettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingView.h; sourceTree = "<group>"; };
+		A2C15F24226D5D5A0076394C /* SettingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingView.m; sourceTree = "<group>"; };
 		A2EA705722520DAA007E7A77 /* InviteListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InviteListView.h; sourceTree = "<group>"; };
 		A2EA705822520DAA007E7A77 /* InviteListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InviteListView.m; sourceTree = "<group>"; };
 		B2190E1F4E9B2ACB97237158 /* Pods-SealMeeting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SealMeeting.release.xcconfig"; path = "Target Support Files/Pods-SealMeeting/Pods-SealMeeting.release.xcconfig"; sourceTree = "<group>"; };
@@ -449,7 +452,7 @@
 			children = (
 				279F42282251FF7100BD2873 /* Whiteboard */,
 				279F422F2251FF7100BD2873 /* Classroom */,
-				279F42762251FF7100BD2873 /* Setting */,
+				A2C15F27226D9CF90076394C /* Setting */,
 				279F427E2251FF7100BD2873 /* Login */,
 			);
 			path = Sections;
@@ -481,6 +484,7 @@
 		279F42322251FF7100BD2873 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A24251B92277E0C70076FE34 /* ZoomControl */,
 				A2EA705622520D83007E7A77 /* Invite */,
 				279F42332251FF7100BD2873 /* Chat */,
 				279F42552251FF7100BD2873 /* Title */,
@@ -640,29 +644,10 @@
 				279F42752251FF7100BD2873 /* EmptyView.m */,
 				279F42742251FF7100BD2873 /* MainContainerView.h */,
 				279F42722251FF7100BD2873 /* MainContainerView.m */,
+				276694EA227198530049F6C8 /* VideoMaskView.h */,
+				276694EB227198530049F6C8 /* VideoMaskView.m */,
 			);
 			path = MainContainer;
-			sourceTree = "<group>";
-		};
-		279F42762251FF7100BD2873 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				279F42792251FF7100BD2873 /* Cell */,
-				279F427C2251FF7100BD2873 /* SelectResolutionController.h */,
-				279F42772251FF7100BD2873 /* SelectResolutionController.m */,
-				279F42782251FF7100BD2873 /* SettingViewController.h */,
-				279F427D2251FF7100BD2873 /* SettingViewController.m */,
-			);
-			path = Setting;
-			sourceTree = "<group>";
-		};
-		279F42792251FF7100BD2873 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				279F427A2251FF7100BD2873 /* SettingTableViewCell.h */,
-				279F427B2251FF7100BD2873 /* SettingTableViewCell.m */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		279F427E2251FF7100BD2873 /* Login */ = {
@@ -706,6 +691,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A24251B92277E0C70076FE34 /* ZoomControl */ = {
+			isa = PBXGroup;
+			children = (
+				A24251BA2277E10C0076FE34 /* ZoomControl.h */,
+				A24251BB2277E10C0076FE34 /* ZoomControl.m */,
+			);
+			path = ZoomControl;
+			sourceTree = "<group>";
+		};
 		A2968FDB2252F9BF00348A92 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -713,6 +707,25 @@
 				A2968FDD2252F9E100348A92 /* InviteHelper.m */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		A2C15F26226D9ADF0076394C /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				279F427A2251FF7100BD2873 /* SettingResolutionCell.h */,
+				279F427B2251FF7100BD2873 /* SettingResolutionCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		A2C15F27226D9CF90076394C /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				A2C15F23226D5D5A0076394C /* SettingView.h */,
+				A2C15F24226D5D5A0076394C /* SettingView.m */,
+				A2C15F26226D9ADF0076394C /* cell */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		A2EA705622520D83007E7A77 /* Invite */ = {
@@ -876,14 +889,16 @@
 				279F421E2251FF6700BD2873 /* MemberChangeMessage.m in Sources */,
 				279F41E82251FF5F00BD2873 /* HTTPResult.m in Sources */,
 				A2968FDE2252F9E100348A92 /* InviteHelper.m in Sources */,
-				279F42A82251FF7100BD2873 /* SettingTableViewCell.m in Sources */,
+				279F42A82251FF7100BD2873 /* SettingResolutionCell.m in Sources */,
 				279F421F2251FF6700BD2873 /* ApplySpeechResultMessage.m in Sources */,
 				279F41E62251FF5F00BD2873 /* RolePortraitView.m in Sources */,
 				279F428D2251FF7100BD2873 /* CREmojiCollectionCell.m in Sources */,
 				279F41E42251FF5F00BD2873 /* UIColor+RCColor.m in Sources */,
 				279F42172251FF6700BD2873 /* ControlDeviceNotifyMessage.m in Sources */,
 				279F429E2251FF7100BD2873 /* RecentSharedView.m in Sources */,
+				276694EC227198530049F6C8 /* VideoMaskView.m in Sources */,
 				279F41C42251FE8300BD2873 /* main.m in Sources */,
+				A2C15F25226D5D5A0076394C /* SettingView.m in Sources */,
 				279F428A2251FF7100BD2873 /* WhiteboardView.m in Sources */,
 				279F42932251FF7100BD2873 /* MessageCell.m in Sources */,
 				279F42162251FF6700BD2873 /* DisplayCommandMessage.m in Sources */,
@@ -921,6 +936,7 @@
 				279F42AA2251FF7100BD2873 /* LoginViewController.m in Sources */,
 				279F429F2251FF7100BD2873 /* RecentSharedVideoCell.m in Sources */,
 				279F421C2251FF6700BD2873 /* InviteUpgradeMessage.m in Sources */,
+				A24251BC2277E10C0076FE34 /* ZoomControl.m in Sources */,
 				279F42262251FF6700BD2873 /* IMService.m in Sources */,
 				279F42182251FF6700BD2873 /* TicketExpiredMessage.m in Sources */,
 				279F42A42251FF7100BD2873 /* ToolPanelView.m in Sources */,
@@ -930,10 +946,8 @@
 				A2968FE722533F6000348A92 /* QRCodeView.m in Sources */,
 				279F429C2251FF7100BD2873 /* VideoListView.m in Sources */,
 				279F42992251FF7100BD2873 /* ChatAreaView.m in Sources */,
-				279F42A72251FF7100BD2873 /* SelectResolutionController.m in Sources */,
 				279F421B2251FF6700BD2873 /* RoleChangedMessage.m in Sources */,
 				279F42972251FF7100BD2873 /* MessageModel.m in Sources */,
-				279F42A92251FF7100BD2873 /* SettingViewController.m in Sources */,
 				A2EA705922520DAA007E7A77 /* InviteListView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

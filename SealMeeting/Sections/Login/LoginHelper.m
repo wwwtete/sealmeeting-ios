@@ -67,31 +67,46 @@
     NSLog(@"logout start");
     [[RTCService sharedInstance] leaveRongRTCRoom:[ClassroomService sharedService].currentRoom.roomId success:^{
         NSLog(@"leave rtc room success");
-            [[RCIMClient sharedRCIMClient] disconnect];
-            [[ClassroomService sharedService] leaveClassroom:^{
-                dispatch_main_async_safe(^{
-                    if (success) {
-                        success();
-                    }
-                });
-            } error:^(ErrorCode errorCode) {
-                dispatch_main_async_safe(^{
-                    if (error) {
-                        error(errorCode);
-                    }
-                });
-            }];
-        
+        [self leave:success error:error];
     } error:^(RongRTCCode code) {//todo
         NSLog(@"leave rtc room error:%@",@(code));
+        //用户离开 RTC 成功，离开 classroom 失败，再次调用离开时，RTC会报 RongRTCCodeNotInRoom 错误
+        if (code == RongRTCCodeNotInRoom) {
+            [self leave:success error:error];
+        }else{
+            dispatch_main_async_safe(^{
+                if (error) {
+                    error(code);
+                }
+            });
+        }
+    }];
+}
+
+- (void)leave:(void (^)(void))success error:(void (^)(RongRTCCode code))error{
+    [[ClassroomService sharedService] leaveClassroom:^{
+        [[RCIMClient sharedRCIMClient] disconnect];
         dispatch_main_async_safe(^{
-            if (error) {
-                error(code);
+            if (success) {
+                success();
+            }
+        });
+    } error:^(ErrorCode errorCode) {
+        dispatch_main_async_safe(^{
+            [[RCIMClient sharedRCIMClient] disconnect];
+            //当前用户不在房间或者房间不存在，直接告诉上层退出房间成功
+            if(ErrorCodeUserNotExistInRoom == errorCode || ErrorCodeRoomNotExist == errorCode) {
+                if(success) {
+                    success();
+                }
+            }else {//否则就是正常返回失败
+                if (error) {
+                    error(errorCode);
+                }
             }
         });
     }];
 }
-
 #pragma mark - RCConnectionStatusChangeDelegate
 - (void)onConnectionStatusChanged:(RCConnectionStatus)status{
     if (status == ConnectionStatus_Connected) {

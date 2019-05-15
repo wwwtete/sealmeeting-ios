@@ -11,7 +11,7 @@
 "OpenVideo"="加入时关闭摄像头";
 "MeetingId"="输入会议 ID";
 "UserName"="输入姓名";
-"Resolution"="分辨率";
+"Resolution"="分辨率:";
 "Setting"="设置";
 "LoginFail"="加入失败";
 "OnlinePerson" = "在线成员";
@@ -123,3 +123,5 @@
 "HasCopy"="邀请信息已复制";
 "WeChatUninstall"="请检查微信是否安装或重新邀请";
 "InviteFailed"="邀请失败";
+"InviteTitle"="会议邀请";
+"RecentSharedScale"="当前共享画布展示比例 %d%%";

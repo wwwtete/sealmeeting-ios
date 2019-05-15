@@ -9,8 +9,10 @@
 #import "InviteListView.h"
 #import "WXApi.h"
 
-#define InviteItemWidth 44
-#define InviteItemSpace 25
+#define InviteItemWidth 55
+#define VerticalSpace 30
+#define HorizontalSpace 51
+#define ImageWidth 32
 @interface InviteListView()
 
 @end
@@ -24,19 +26,25 @@
 }
 
 - (void)setupSubviews{
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 50)];
+    titleLabel.text = NSLocalizedStringFromTable(@"InviteTitle", @"SealMeeting", nil);
+    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.font = [UIFont systemFontOfSize:15];
+    [self addSubview:titleLabel];
     NSArray *titles = @[@"WeChat",@"SMS",@"Email",@"QRCode",@"CopyInfo"];
     NSArray *images = @[@"wechat",@"sms",@"email",@"qrcode",@"copy"];
-    CGFloat topSpace = (UIScreenHeight - (InviteItemWidth*5+InviteItemSpace*4))/2;
-    CGFloat leftSpace = (self.frame.size.width - InviteItemWidth)/2;
+    CGFloat topSpace = 60;
+    CGFloat leftSpace = (self.frame.size.width - InviteItemWidth*2-HorizontalSpace)/2;
     NSArray *tags = @[@(InviteListViewActionTagWechat),@(InviteListViewActionTagSMS),@(InviteListViewActionTagEmail),@(InviteListViewActionTagQRCode),@(InviteListViewActionTagCopyInfo)];
     for (int i = 0; i < titles.count; i ++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.tag = [tags[i] intValue];
-        button.frame = CGRectMake(leftSpace,topSpace+InviteItemWidth*i+InviteItemSpace*i,InviteItemWidth, InviteItemWidth);
-//        button.backgroundColor = [UIColor cyanColor];
-        [button setImage:[UIImage imageNamed:images[i]] forState:UIControlStateNormal];
-        button.imageEdgeInsets = UIEdgeInsetsMake(0,10,20,10);
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(-leftSpace, InviteItemWidth-13, self.frame.size.width, 13)];
+        button.frame = CGRectMake(leftSpace+(i%2)*(HorizontalSpace+InviteItemWidth),(i/2)*(InviteItemWidth+VerticalSpace)+topSpace,InviteItemWidth, InviteItemWidth);
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((InviteItemWidth-ImageWidth)/2, 0, ImageWidth, ImageWidth)];
+        imageView.image = [UIImage imageNamed:images[i]];
+        [button addSubview:imageView];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(-10, InviteItemWidth-15, button.frame.size.width+20, 15)];
         label.text = NSLocalizedStringFromTable(titles[i], @"SealMeeting", nil);
         label.textColor = [UIColor whiteColor];
         label.textAlignment = NSTextAlignmentCenter;

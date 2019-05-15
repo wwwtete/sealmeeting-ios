@@ -13,16 +13,17 @@
 #import "SelectionButton.h"
 #import "Masonry.h"
 #import "InputTextField.h"
-#import "SettingViewController.h"
 #import "LoginHelper.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "ClassroomService.h"
 #import "NormalAlertView.h"
 #import "AppDelegate.h"
+#import "SettingView.h"
 #define meetingIdTextFieldTag 3000
 #define userNameTextFieldTag 3001
-@interface LoginViewController ()<UITextFieldDelegate, ClassroomHelperDelegate>
+@interface LoginViewController ()<UITextFieldDelegate, ClassroomHelperDelegate, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UIButton *setButton;
+@property (nonatomic, strong) SettingView *settingView;
 @property (nonatomic, strong) UIImageView *logoView;
 @property (nonatomic, strong) InputTextField *meetingIdTextField;
 @property (nonatomic, strong) InputTextField *userNameTextField;
@@ -51,7 +52,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self didResignFirstResponder];
+    [self didTapView];
 }
 
 #pragma mark - ClassroomHelperDelegate
@@ -78,6 +79,14 @@
     }];
 }
 
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+    //如果是子视图 self.edittingArea ，设置无法接受 父视图_collectionView 的长按事件。
+    if ([touch.view isDescendantOfView:self.settingView]) {
+        return NO;
+    }
+    [self.settingView hiden];
+    return YES;
+}
 #pragma mark - UITextFieldDelegate
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     InputTextField *field = (InputTextField *)textField;
@@ -170,8 +179,7 @@
 }
 
 - (void)onTapSetButton{
-    SettingViewController *settingVC = [[SettingViewController alloc] init];
-    [self.navigationController pushViewController:settingVC animated:YES];
+    [self.settingView showSettingViewInView:self.view];
 }
 
 #pragma mark - Helper
@@ -232,7 +240,7 @@
     }
 }
 
-- (void)didResignFirstResponder{
+- (void)didTapView{
     if ([self.meetingIdTextField isFirstResponder]) {
         [self.meetingIdTextField resignFirstResponder];
     }else if ([self.userNameTextField isFirstResponder]){
@@ -255,6 +263,8 @@
     }
     return topVC;
 }
+
+
 #pragma mark - SubViews
 - (void)addSubViews{
     [self.view addSubview:self.setButton];
@@ -322,7 +332,8 @@
 
 - (void)addGesture{
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
-    [tap addTarget:self action:@selector(didResignFirstResponder)];
+    [tap addTarget:self action:@selector(didTapView)];
+    tap.delegate = self;
     [self.view addGestureRecognizer:tap];
 }
 #pragma mark - Getters & setters
@@ -402,5 +413,12 @@
         _joinButton.alpha = 0.5;
     }
     return _joinButton;
+}
+
+- (SettingView *)settingView{
+    if (!_settingView) {
+        _settingView = [[SettingView alloc] initWithFrame:CGRectMake(UIScreenWidth-230, 0, 230, UIScreenHeight) style:(UITableViewStyleGrouped)];
+    }
+    return _settingView;
 }
 @end

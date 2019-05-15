@@ -8,15 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "RoomMember.h"
-
+@class WhiteboardView;
 @protocol WhiteboardControlDelegate<NSObject>
 - (void)didTurnPage:(NSInteger)pageNum;
+- (void)whiteboardViewDidChangeZoomScale:(float)scale;
 @end
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface WhiteboardControl : NSObject
-
+@property(nonatomic, strong) WhiteboardView *wbView;
 @property(nonatomic, copy, readonly) NSString *currentWhiteboardId;
 @property(nonatomic, copy, readonly) NSString *currentWhiteboardURL;
 @property(nonatomic, assign, readonly) BOOL wBoardDisplayed;
@@ -27,8 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithDelegate:(id<WhiteboardControlDelegate>)delegate;
 - (void)loadWBoardWith:(NSString *)wBoardID
              wBoardURL:(NSString *)wBoardURL
-             superView:(UIView *)superView
                  frame:(CGRect)frame;
+- (void)moveToSuperView:(UIView *)superView;
 - (void)hideBoard;
 - (void)destroyBoard;
 - (void)turnPage:(NSInteger)pageNum;
@@ -38,4 +39,3 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END

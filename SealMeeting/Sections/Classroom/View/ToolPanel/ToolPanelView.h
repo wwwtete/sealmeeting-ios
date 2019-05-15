@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define LLeftToolViewTop 82
+#define LLeftButtonWidht     24
 typedef enum : NSUInteger {
     ToolPanelViewActionTagWhiteboard,
     ToolPanelViewActionTagRecentlyShared,
@@ -30,7 +32,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, weak) id<ToolPanelViewDelegate> delegate;
 
 - (void)reloadToolPanelView;
-
+- (void)foldToolPanelView;
 @end
 
 
