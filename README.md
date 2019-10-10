@@ -16,15 +16,32 @@
 
 	参见源码中 `AppDelegate.m`,`HTTPUtility.m`，其中 `APPKey 和 BASE_URL 为必填项`，`WeChatKey` 用来做微信分享
 
-5. `注意`
+5.	运行 SealMeeting-iOS
 
-![](./images/Image3.png)
+   SealMeeting-iOS 是用 cocoaPods 管理融云 SDK 库和其他第三方库，下载完源码后，按照下面步骤操作
 
-如果出现这样的编译失败问题请进入终端，在 SealMeeting.xcodeproj 的同级目录下执行下面命令
+   （1）终端进入 Podfile 目录
 
-`git checkout -- SealMeeting.xcodeproj/project.pbxproj`
+   （2）更新本地 CocoaPods 的本地仓库，终端执行下面命令
 
-问题的原因是不同版本的 pod 对 xcode 配置文件的处理是不一致的，会导致某些文件找不到，执行上面命令清空本地对 SealMeeting.xcodeproj/project.pbxproj 修改，避免冲突
+   ```
+   $ pod repo update
+   ```
+   （3）下载 Podfile 中的依赖库，终端执行下面命令
+
+    ```
+   $ pod install
+   ```
+
+   `注意`
+
+   ![](./images/Image3.png)
+
+   如果出现这样的编译失败问题请进入终端，在 SealMeeting.xcodeproj 的同级目录下执行下面命令
+
+   `git checkout -- SealMeeting.xcodeproj/project.pbxproj`
+
+   问题的原因是不同版本的 pod 对 xcode 配置文件的处理是不一致的，会导致某些文件找不到，执行上面命令清空本地对 SealMeeting.xcodeproj/project.pbxproj 修改，避免冲突
 
 ## 代码目录介绍
 iOS 端整体目录结构主要由 Sections，Services，Util，Resources 四个部分组成。
